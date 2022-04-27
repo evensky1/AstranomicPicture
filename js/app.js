@@ -28,13 +28,14 @@ async function getLinkToImage() {
 
         if (data.media_type === "image") {
             video.style.visibility = "hidden";
+            video.style.position = "absolute";
             image.style.visibility = "visible";
             image.setAttribute("src", data.hdurl);
         } else {
+            video.setAttribute("src", data.url + "&loop=1&autoplay=1&mute=1&controls=0&showinfo=0&modestbranding=1");
             image.style.visibility = "hidden";
             video.style.visibility = "visible";
             video.style.position = "static";
-            video.setAttribute("src", data.url + "&loop=1&autoplay=1&mute=1&controls=0&showinfo=0&modestbranding=1");
             video.setAttribute("frameborder", "0");
         }
 
@@ -45,5 +46,11 @@ async function getLinkToImage() {
     document.querySelector(".content-container").classList.remove("loading-spinner");
 }
 
+document.addEventListener("keypress", event => {
+    console.log(event.key);
+    if (event.key === "Enter") {
+        document.getElementById("btn").click();
+    }
+})
 document.getElementById("calendar").value = localStorage.getItem("date");
 getLinkToImage();
