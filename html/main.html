@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <title>APOD</title>
+    <link rel="stylesheet" href="../style/main-style.css">
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="../img/nasa-logo.svg" alt="logo">
+            </div>
+            <div class="controls">
+                <input type="date" id="calendar">
+                <input type="submit" id="btn" onclick="getLinkToImage()">
+            </div>
+        </div>
+    </header>
+    <article>
+        <div class="main">
+            <div class="content-container">
+                <div class="explanation">
+                    <h1 id="img-title"></h1>
+                    <p id="explanation-text"></p>
+                </div>
+                <img id="image">
+                <iframe id="video"></iframe>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <p>Nothing interesting</p>
+    </footer>
+    <script src="../js/app.js"></script>
+
+</body>
+</html>
