@@ -19,10 +19,10 @@ async function fetchContent() {
     });
 }
 
-async function getLinkToImage() {
+function getLinkToImage() {
     document.querySelector(".content-container").classList.add("loading-spinner");
 
-    await fetchContent().then(data => {
+     fetchContent().then(data => {
         let video = document.querySelector("#video");
         let image = document.querySelector("#image");
 
@@ -41,9 +41,9 @@ async function getLinkToImage() {
 
         document.getElementById("img-title").innerHTML = data.title;
         document.getElementById("explanation-text").innerHTML = data.explanation;
-    }).catch(e => alert(e));
-
-    document.querySelector(".content-container").classList.remove("loading-spinner");
+    }).catch(e => alert(e)).then(() => {
+        document.querySelector(".content-container").classList.remove("loading-spinner");
+    });
 }
 
 function switchTextColorToWhite() {
