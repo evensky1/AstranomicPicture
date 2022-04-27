@@ -53,7 +53,6 @@ body {
 .main {
     width: auto;
     height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,6 +125,27 @@ footer p {
     font-weight: lighter;
     color: white;
     margin: 0;
+}
+
+.switcher input {
+    margin-left: 15px;
+    font-family: Playfair, Arial, serif;
+    font-weight: lighter;
+    font-size: 22px;
+    color: white;
+    background-color: transparent;
+    border: solid 3px white;
+    border-radius: 10px;
+    text-align: center;
+    width: 170px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+.switcher input:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: solid 1px;
+    border-radius: 15px;
 }
 
 .loading-spinner {

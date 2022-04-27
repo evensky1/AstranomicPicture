@@ -46,11 +46,22 @@ async function getLinkToImage() {
     document.querySelector(".content-container").classList.remove("loading-spinner");
 }
 
+function switchTextColorToWhite() {
+    let textElem = document.querySelector(".explanation");
+    textElem.style.color = "#ffffff";
+}
+
+function switchTextColorToBlack() {
+    let textElem = document.querySelector(".explanation");
+    textElem.style.color = "#000000";
+}
+
 document.addEventListener("keypress", event => {
     console.log(event.key);
     if (event.key === "Enter") {
         document.getElementById("btn").click();
     }
 })
+
 document.getElementById("calendar").value = localStorage.getItem("date");
 getLinkToImage();
